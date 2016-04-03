@@ -1,0 +1,167 @@
+@import "../webroot/lib/sass-flex-mixin/_flexbox";
+
+$box-margin-bottom: 40px;
+$box-bg-color: rgba(#000, .85);
+
+@mixin border-radius($value) {
+	-moz-border-radius: $value;
+	-webkit-border-radius: $value;
+	border-radius: $value
+}
+
+@media (max-width: 767px) {
+
+}
+@media (min-width: 768px) {
+	.home-content{
+		margin-left: 6%;
+		margin-right: 6%;
+	}
+}
+@media (min-width: 992px){
+	.home-content{
+		margin-left: 8%;
+		margin-right: 50%;
+	}
+	.box-ad-banner{
+		position: fixed;
+		width: 200px;
+		height: 200px;
+		background-color: darken(#FFF, 10%);
+		bottom: 0;
+		right: 0;
+		$margin: 15px;
+		margin-right: $margin;
+		margin-bottom: $margin;
+		background-image: url(http://placehold.it/200x200)
+	}
+}
+@media (min-width: 1200px) {
+
+}
+
+html, body {
+	height: 100%;
+	font-family: 'Roboto', sans-serif;
+}
+body {
+	min-height: 100%;
+}
+
+.form-control {
+	@include border-radius(4px);
+}
+textarea:focus, input:focus, .uneditable-input:focus {   
+    border-color: #209600 !important;
+    box-shadow: none!important;
+    outline: 0 none !important;
+}
+
+.btn-default{
+	background-color: #209600!important;
+	border: none;
+	color: #FFF!important;
+	@include border-radius(4px!important);
+}
+
+.home-container {
+	background-image: url(../img/bg.jpg);
+	background-position: center center;
+	background-size: cover;
+	background-color: darken(#FFF, 10%);
+	width: 100%;
+	height: 100%;
+}
+.home-content {
+	@include flexbox;
+	@include flex-direction(column);
+	@include align-items(center);
+	/*@include align-content(center);*/
+	height: 100%!important;
+	/*background-color: red;*/
+}
+.home-content-logo {
+	@include flexbox;
+	@include flex(1);
+	@include align-items(flex-end);
+	@include justify-content(center);
+	text-align: center;
+	width: 100%;
+	/*background-color: green;*/
+}
+.home-content-logo  > img {
+	text-align: center;
+	width: 80%;
+	margin-bottom: $box-margin-bottom;
+}
+.home-content-body {
+	width: 100%;
+}
+.countdown-container{
+	@include flexbox;
+	@include flex-direction(row);
+	width: 100%;
+	margin-bottom: $box-margin-bottom;
+}
+.countdown-days, .countdown-hours, .countdown-minutes, .countdown-seconds {
+	@include flex(1);
+	margin-right: 10px;
+	text-align: center;
+	/*padding: -30px 0!important;
+	
+	
+	background-color: #FFF;
+	@include flexbox;
+	@include flex-direction(column);
+	@include align-content(center);
+	@include justify-content(center);
+	@include align-items(center);*/
+}
+.countdown-seconds {
+	margin-right: 0;
+}
+.countdown-number {
+	font-size: 55px;
+	font-weight: 900;
+	color: #ffba00;
+	background-color: darken(#FFF, 0);
+	padding: 0 15px!important;
+	margin: 0!important;
+}
+.countdown-label {
+	background-color: darken(#FFF, 6%);
+	text-transform: uppercase;
+	padding: 5px 0;
+	text-align: center;
+}
+.home-content-hashtag{
+	width: 100%;
+	padding-top: ($box-margin-bottom / 2);
+	font-size: 18px;
+	/*text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);*/
+}
+.hashtag-brasil-flag{
+	width: 25px;
+}
+.home-text {
+	text-align: center;
+	font-size: 16px;
+	margin-bottom: $box-margin-bottom;
+	color: lighten(#000, 10%);
+	text-shadow: 0px 1px 0px rgba(0, 0, 0, 1);
+}
+.box-email-content{
+	width: 100%;
+	background-color: $box-bg-color;
+	padding: 30px 70px;
+	margin-bottom: ($box-margin-bottom / 2);
+	@include border-radius(4px);
+}
+.box-email-content-title{
+	color: darken(#FFF, 20%);
+	text-shadow: 0px 1px 0px rgba(0, 0, 0, .6);
+	margin-bottom: 30px;
+	font-size: 18px!important;
+	/*font-weight: 700;*/
+	text-align: center;
+}
